@@ -1,1 +1,36 @@
-/**/
+img {
+    float: right;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: auto;
+}
+
+#realMain {
+    align-content: center;
+}
+
+#main {
+    clear: both;
+    align-content: center;
+    padding: 5px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.nav {
+    background-color: gray;
+}
+
+#buttonContainer {
+    width: 100%;
+    margin: 5px;
+    align-content: center;
+}
+
+#imgFrame {
+    vertical-align: center;
+}
