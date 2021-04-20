@@ -1,5 +1,11 @@
+#imgFrame {
+    float: left;
+    width: 40%;
+    vertical-align: center;
+}
+
 img {
-    float: right;
+
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
@@ -12,6 +18,8 @@ img {
 }
 
 #mainSection {
+    float: left;
+    width: 60%;
     align-content: center;
     padding: 5px;
 }
@@ -25,16 +33,14 @@ h1, h2 {
 }
 
 #buttonContainer {
-    width: 100%;
     margin: 5px;
     align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-button {
+#centerButton {
     border-radius: 5px;
-    margin-left: 12.5%;
-}
-
-#imgFrame {
-    vertical-align: center;
+    width: 160px;
 }
