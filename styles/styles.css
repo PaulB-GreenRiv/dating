@@ -11,8 +11,7 @@ img {
     align-content: center;
 }
 
-#main {
-    clear: both;
+#mainSection {
     align-content: center;
     padding: 5px;
 }
@@ -29,6 +28,11 @@ h1, h2 {
     width: 100%;
     margin: 5px;
     align-content: center;
+}
+
+button {
+    border-radius: 5px;
+    margin-left: 12.5%;
 }
 
 #imgFrame {
