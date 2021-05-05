@@ -19,5 +19,47 @@ $f3->route('GET /', function(){
     echo $view->render('views/home.html');
 });
 
+$f3->route('GET|POST /personalInfo', function(){
+    //Store form data in session
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        var_dump($_POST);
+        //$_SESSION['x'] = $_POST['y'];
+        header('location: profile');
+    }
+    //Display page
+    $view = new Template();
+    echo $view->render('views/personalInfo.html');
+});
+
+$f3->route('GET|POST /profile', function(){
+    //Store form data in session
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        var_dump($_POST);
+        //$_SESSION['x'] = $_POST['y'];
+        header('location: interests');
+    }
+    //Display page
+    $view = new Template();
+    echo $view->render('views/profile.html');
+});
+
+$f3->route('GET|POST /interests', function(){
+    //Store form data in session
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        var_dump($_POST);
+        //$_SESSION['x'] = $_POST['y'];
+        header('location: summary');
+    }
+    //Display page
+    $view = new Template();
+    echo $view->render('views/interests.html');
+});
+
+$f3->route('GET|POST /summary', function(){
+    //Store form data in session
+    $view = new Template();
+    echo $view->render('views/summary.html');
+});
+
 //Run Fat-Free
 $f3->run();
