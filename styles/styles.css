@@ -1,3 +1,7 @@
+form {
+    margin-bottom: 10px;
+}
+
 #imgFrame {
     float: left;
     width: 40%;
@@ -43,4 +47,70 @@ h1, h2 {
 #centerButton {
     border-radius: 5px;
     width: 160px;
+}
+
+#mainContainer {
+    border: 1px solid lightgray;
+    contain: content;
+    width: 100%;
+    margin-top: 16px;
+}
+
+/*Personal Info*/
+
+#fillerContainer {
+    float: left;
+    width: 60%;
+}
+
+#notice {
+    float: left;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background-color: lightgray;
+    margin: 10px;
+    width: 30%;
+}
+
+/*Profile*/
+
+#profSectOne, #profSectTwo {
+    float: left;
+    width: 50%;
+}
+
+/*Interests*/
+
+#indActs li, #outActs li {
+    list-style-type: none;
+    float: left;
+    padding: 10px;
+}
+
+#indActs ul, #outActs ul {
+    clear: both;
+    width: 100%;
+}
+
+#inLabel, #outLabel {
+    clear: both;
+    float: left;
+}
+
+/*Summary*/
+#summaryList {
+    width: 50%;
+    border: 1px solid lightgray;
+    float: left;
+}
+
+#summList li {
+    border: 1px solid lightgray;
+    list-style-type: none;
+    padding-left: 16px;
+}
+
+#visProfile {
+    width: 50%;
+    float: left;
 }
