@@ -1,5 +1,18 @@
+#realMain {
+    margin-top: 16px;
+    align-content: center;
+}
+
 form {
     margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#nextButton {
+    background-color: lightskyblue;
+    border-radius: 10px;
+    margin: 10px;
+    float: right;
 }
 
 #imgFrame {
@@ -17,8 +30,8 @@ img {
     margin-top: auto;
 }
 
-#realMain {
-    align-content: center;
+.card p {
+    font-style: italic;
 }
 
 #mainSection {
@@ -33,7 +46,17 @@ h1, h2 {
 }
 
 .nav {
-    background-color: gray;
+    background-color: lightgray;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav h3 {
+    padding-left: 5%;
+    margin-bottom: 16px;
 }
 
 #buttonContainer {
@@ -60,6 +83,7 @@ h1, h2 {
 
 #fillerContainer {
     float: left;
+    padding-bottom: 10px;
     width: 60%;
 }
 
