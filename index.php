@@ -1,5 +1,9 @@
 <?php
-
+/*
+ * Paul B.
+ * SDEV 328 - Dating II
+ * 5/7/21
+ */
 //This is the controller for the ant dating site
 
 //Turn on error-reporting
@@ -22,12 +26,14 @@ $f3->route('GET /', function(){
     echo $view->render('views/home.html');
 });
 
+//Home route
 $f3->route('GET /home', function(){
     //Display the home page
     $view = new Template();
     echo $view->render('views/home.html');
 });
 
+//Personal Info route
 $f3->route('GET|POST /personalInfo', function(){
     //Store form data in session
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -45,6 +51,7 @@ $f3->route('GET|POST /personalInfo', function(){
     echo $view->render('views/personalInfo.html');
 });
 
+//Profile route
 $f3->route('GET|POST /profile', function(){
     //Store form data in session
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -60,6 +67,7 @@ $f3->route('GET|POST /profile', function(){
     echo $view->render('views/profile.html');
 });
 
+//Interests route
 $f3->route('GET|POST /interests', function(){
     //Store form data in session
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -73,6 +81,7 @@ $f3->route('GET|POST /interests', function(){
     echo $view->render('views/interests.html');
 });
 
+//Summary route
 $f3->route('GET|POST /summary', function(){
     //Store form data in session
     $view = new Template();
