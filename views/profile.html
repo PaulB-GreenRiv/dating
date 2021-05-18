@@ -52,14 +52,20 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label"><strong>Seeking</strong></label>
                     <div class="col">
-                        <label><input type="radio" name="lgender"
+                        <repeat group="{{ @genders }}" value="{{ @gender }}">
+                            <label><input type="radio" name="lgender"
+                                          id="{{ @gender }}" value="{{ @gender }}">
+                                {{ ucfirst(@gender) }}
+                                </input></label><br>
+                        </repeat>
+                        <!--<label><input type="radio" name="lgender"
                                       id="male" value="Male"> Male</input></label><br>
                         <label><input type="radio" name="lgender"
                                       id="female" value="Female"> Female</input></label><br>
                         <label><input type="radio" name="lgender"
                                       id="trans" value="Transgender"> Transgender</input></label><br>
                         <label><input type="radio" name="lgender"
-                                      id="nonbin" value="NonBinary"> Non-Binary</input></label><br>
+                                      id="nonbin" value="NonBinary"> Non-Binary</input></label><br>-->
                     </div>
                 </div>
             </div>

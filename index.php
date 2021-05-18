@@ -15,6 +15,8 @@ session_start();
 
 //Require autoload file
 require_once ('vendor/autoload.php');
+require_once ('model/data-layer.php');
+require_once ('model/validation.php');
 
 //Instantiate Fat-Free
 $f3 = Base::instance();
@@ -34,7 +36,7 @@ $f3->route('GET /home', function(){
 });
 
 //Personal Info route
-$f3->route('GET|POST /personalInfo', function(){
+$f3->route('GET|POST /personalInfo', function($f3){
     //Store form data in session
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -46,13 +48,16 @@ $f3->route('GET|POST /personalInfo', function(){
         $_SESSION['pNum'] = $_POST['pNum'];
         header('location: profile');
     }
+
+    $f3->set('genders', getGenderDetails());
+
     //Display page
     $view = new Template();
     echo $view->render('views/personalInfo.html');
 });
 
 //Profile route
-$f3->route('GET|POST /profile', function(){
+$f3->route('GET|POST /profile', function($f3){
     //Store form data in session
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //$_SESSION['x'] = $_POST['y'];
@@ -62,13 +67,16 @@ $f3->route('GET|POST /profile', function(){
         $_SESSION['bio'] = $_POST['bio'];
         header('location: interests');
     }
+
+    $f3->set('genders', getGenderDetails());
+
     //Display page
     $view = new Template();
     echo $view->render('views/profile.html');
 });
 
 //Interests route
-$f3->route('GET|POST /interests', function(){
+$f3->route('GET|POST /interests', function($f3){
     //Store form data in session
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //$_SESSION['x'] = $_POST['y'];
@@ -76,6 +84,10 @@ $f3->route('GET|POST /interests', function(){
         $_SESSION['outdoor'] = implode(", ", $_POST['outdoor']);
         header('location: summary');
     }
+
+    $f3->set("iInterests", getInInterests());
+    $f3->set("oInterests", getOutInterests());
+
     //Display page
     $view = new Template();
     echo $view->render('views/interests.html');
