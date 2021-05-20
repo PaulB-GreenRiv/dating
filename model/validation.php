@@ -7,7 +7,7 @@ function validName($name)
 
 function validAge($age)
 {
-    return (is_int($age) and ($age >= 18 and $age <= 118));
+    return ($age >= 18 and $age <= 118);
 }
 
 function validPhone($phone)

@@ -19,7 +19,7 @@
 
 <!--Nav Bar-->
 <div class="nav">
-    <h3><a href="home">The Ant Hill</a></h3>
+    <h3>The Ant Hill <a href="home">(Click here to head Home)</a></h3>
 </div>
 
     <div class="container" id="mainContainer">
@@ -34,17 +34,20 @@
             <div class="container" id="profSectOne">
                 <!--Email-->
                 <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label"><strong>Email</strong></label>
+                    <label for="email" class="col-sm-2 control-label"><strong>Email *</strong></label>
                     <div class="col">
-                        <input class="form-control" type="text" name="email" id="email">
+                        <input class="form-control" type="text" name="email" id="email" value="{{ @userEmail }}">
                     </div>
+                    <check if="{{ isset(@errors['email']) }}">
+                        <span class="err">{{ @errors['email'] }}</span>
+                    </check>
                 </div>
 
                 <!--Hill Number-->
                 <div class="form-group">
                     <label for="hill" class="col-sm-2 control-label"><strong>Hill #</strong></label>
                     <div class="col">
-                        <input class="form-control" type="number" name="hill" id="hill">
+                        <input class="form-control" type="number" name="hill" id="hill" value="{{ @userHill }}">
                     </div>
                 </div>
 
@@ -53,8 +56,9 @@
                     <label class="col-sm-2 control-label"><strong>Seeking</strong></label>
                     <div class="col">
                         <repeat group="{{ @genders }}" value="{{ @gender }}">
-                            <label><input type="radio" name="lgender"
-                                          id="{{ @gender }}" value="{{ @gender }}">
+                            <label><input type="radio" name="gender"
+                                          id="{{ @gender }}" value="{{ @gender }}"
+                                <check if="{{ $gender == @userlGender }}">checked="checked"</check>>
                                 {{ ucfirst(@gender) }}
                                 </input></label><br>
                         </repeat>
@@ -77,7 +81,7 @@
                 <div class="form-group">
                     <label for="bio" class="col-sm-2 control-label"><strong>Biography</strong></label>
                     <div class="col">
-                        <textarea class="form-control" rows="6" type="text" name="bio" id="bio"></textarea>
+                        <textarea class="form-control" rows="6" type="text" name="bio" id="bio">{{ ucfirst(@userBio) }}</textarea>
                     </div>
                 </div>
             </div>

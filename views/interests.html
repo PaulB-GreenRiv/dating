@@ -4,7 +4,7 @@
     5/7/21
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <!--Head tag-->
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
 
 <!--Nav Bar-->
 <div class="nav">
-    <h3><a href="home">The Ant Hill</a></h3>
+    <h3>The Ant Hill <a href="home">(Click here to head Home)</a></h3>
 </div>
 
 <form action="#" method="post" class="form-horizontal">
@@ -32,16 +32,22 @@
 
         <!-- Indoor Interests -->
         <div class="form-group" id="indActs">
-            <label class="col-sm-2 control-label" id="inLabel"><strong>Inhill Interests</strong></label><br>
+            <label class="col-sm-2 control-label" id="inLabel"><strong>Inhill Interests *</strong></label><br>
             <div class="row">
                 <ul>
                     <repeat group="{{ @iInterests }}" value="{{ @iInterest }}">
                         <li>
                             <label><input type="checkbox"
-                                            name="indoor[]"
-                                            value="{{ @iInterest }}">{{ ucfirst(@iInterest) }}</label>
+                                            name="indoor[]" id="{{ @iInterest }}"
+                                            value="{{ @iInterest }}"
+                            ><check if="{{ in_array(@interest, @userIndoor) }}">
+                                checked="checked"
+                            </check>{{ ucfirst(@iInterest) }}</input></label>
                         </li>
                     </repeat>
+                    <check if="{{ isset(@errors['indoor']) }}">
+                        <span class="err">{{ @errors['indoor'] }}</span>
+                    </check>
                     <!--
                     <li>
                         <label><input type="checkbox"
@@ -71,16 +77,29 @@
 
         <!-- Outdoor Interests -->
         <div class="form-group" id="outActs">
-            <label class="col-sm-2 control-label" id="outLabel"><strong>Outhill Interests</strong></label><br>
+            <label class="col-sm-2 control-label" id="outLabel"><strong>Outhill Interests *</strong></label><br>
             <div class="row">
                 <ul>
-                    <repeat group="{{ @oInterests }}" value="{{ @oInterest }}">
+                    <!--<repeat group="{{ @oInterests }}" value="{{ @oInterest }}">
                         <li>
                             <label><input type="checkbox"
                                           name="outdoor[]"
                                           value="{{ @oInterest }}">{{ ucfirst(@oInterest) }}</label>
                         </li>
+                    </repeat>-->
+                    <repeat group="{{ @oInterests }}" value="{{ @oInterest }}">
+                        <li>
+                            <label><input type="checkbox"
+                                          name="outdoor[]" id="{{ @oInterest }}"
+                                          value="{{ @oInterest }}"
+                            ><check if="{{ in_array(@interest, @userOutdoor) }}">
+                                checked="checked"
+                            </check>{{ ucfirst(@oInterest) }}</input></label>
+                        </li>
                     </repeat>
+                    <check if="{{ isset(@errors['outdoor']) }}">
+                        <span class="err">{{ @errors['outdoor'] }}</span>
+                    </check>
                     <!--<li>
                         <label><input type="checkbox"
                                       name="outdoor[]"

@@ -19,7 +19,7 @@
 
 <!--Nav Bar-->
 <div class="nav">
-    <h3><a href="home">The Ant Hill</a></h3>
+    <h3>The Ant Hill <a href="home">(Click here to head Home)</a></h3>
 </div>
 
     <div class="container" id="mainContainer">
@@ -33,25 +33,34 @@
             <div class="container" id="fillerContainer">
                 <!--Name Fields-->
                 <div class="form-group">
-                    <label for="fName" class="col-sm-2 control-label"><strong>First Name</strong></label>
+                    <label for="fName" class="col-sm-2 control-label"><strong>First Name *</strong></label>
                     <div class="col">
-                        <input class="form-control" type="text" name="fName" id="fName">
+                        <input class="form-control" type="text" name="fName" id="fName" value="{{ @userfName }}">
                     </div>
+                    <check if="{{ isset(@errors['fName']) }}">
+                        <span class="err">{{ @errors['fName'] }}</span>
+                    </check>
                 </div>
 
                 <div class="form-group">
-                    <label for="lName" class="col-sm-2 control-label"><strong>Last Name</strong></label>
+                    <label for="lName" class="col-sm-2 control-label"><strong>Last Name *</strong></label>
                     <div class="col">
-                        <input class="form-control" type="text" name="lName" id="lName">
+                        <input class="form-control" type="text" name="lName" id="lName" value="{{ @userlName }}">
                     </div>
+                    <check if="{{ isset(@errors['lName']) }}">
+                        <span class="err">{{ @errors['lName'] }}</span>
+                    </check>
                 </div>
 
                 <!--Age Field-->
                 <div class="form-group">
-                    <label for="age" class="col-sm-2 control-label"><strong>Age</strong></label>
+                    <label for="age" class="col-sm-2 control-label"><strong>Age *</strong></label>
                     <div class="col">
-                        <input class="form-control" type="text" name="age" id="age">
+                        <input class="form-control" type="number" name="age" id="age" value="{{ @userAge }}">
                     </div>
+                    <check if="{{ isset(@errors['age']) }}">
+                        <span class="err">{{ @errors['age'] }}</span>
+                    </check>
                 </div>
 
                 <!--Gender Field-->
@@ -60,7 +69,8 @@
                     <div class="col">
                         <repeat group="{{ @genders }}" value="{{ @gender }}">
                             <label><input type="radio" name="gender"
-                                    id="{{ @gender }}" value="{{ @gender }}">
+                                    id="{{ @gender }}" value="{{ @gender }}"
+                                <check if="{{ $gender == @userGend }}">checked="checked"</check>>
                                     {{ ucfirst(@gender) }}
                             </input></label><br>
                         </repeat>
@@ -77,10 +87,13 @@
 
                 <!--Phone Number Field-->
                 <div class="form-group">
-                    <label for="pNum" class="col-sm-2 control-label"><strong>Phone Number</strong></label>
+                    <label for="pNum" class="col-sm-2 control-label"><strong>Phone Number *</strong></label>
                     <div class="col">
-                        <input class="form-control" type="text" name="pNum" id="pNum">
+                        <input class="form-control" type="text" name="pNum" id="pNum" value="{{ @userpNum }}">
                     </div>
+                    <check if="{{ isset(@errors['pNum']) }}">
+                        <span class="err">{{ @errors['pNum'] }}</span>
+                    </check>
                 </div>
             </div>
 
