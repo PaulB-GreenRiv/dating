@@ -41,6 +41,7 @@ $f3->route('GET|POST /personalInfo', function($f3){
     //Reinitialize session array
     $_SESSION = array();
 
+    //Initial variables
     $userfName = "";
     $userlName = "";
     $userAge = "";
@@ -52,6 +53,7 @@ $f3->route('GET|POST /personalInfo', function($f3){
 
         //$_SESSION['x'] = $_POST['y'];
 
+        //Saving elements to post
         $userfName = $_POST['fName'];
         $userlName = $_POST['lName'];
         $userAge = $_POST['age'];
@@ -94,6 +96,7 @@ $f3->route('GET|POST /personalInfo', function($f3){
             (###-###-####)');
         }
 
+        //Unverifiable elements sent to session
         $_SESSION['gender'] = $userGend;
 
         // Continue if there are no errors
@@ -102,6 +105,7 @@ $f3->route('GET|POST /personalInfo', function($f3){
         }
     }
 
+    //Sets variables if fat-free
     $f3->set('userfName', $userfName);
     $f3->set('userlName', $userlName);
     $f3->set('userAge', $userAge);
@@ -117,6 +121,7 @@ $f3->route('GET|POST /personalInfo', function($f3){
 //Profile route
 $f3->route('GET|POST /profile', function($f3){
 
+    //Initial variables
     $userHill = "";
     $userEmail = "";
     $userlGender = "";
@@ -126,6 +131,7 @@ $f3->route('GET|POST /profile', function($f3){
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //$_SESSION['x'] = $_POST['y'];
 
+        //Saving elements to post
         $userHill = $_POST['hill'];
         $userEmail = $_POST['email'];
         $userlGender = $_POST['gender'];
@@ -150,6 +156,7 @@ $f3->route('GET|POST /profile', function($f3){
         }
     }
 
+    //Sets variables in fat-free
     $f3->set('userHill', $userHill);
     $f3->set('userEmail', $userEmail);
     $f3->set('genders', getGenderDetails());
@@ -164,6 +171,7 @@ $f3->route('GET|POST /profile', function($f3){
 //Interests route
 $f3->route('GET|POST /interests', function($f3){
 
+    //Initial variables
     $userIndoor = array();
     $userOutdoor = array();
 
@@ -171,6 +179,7 @@ $f3->route('GET|POST /interests', function($f3){
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //$_SESSION['x'] = $_POST['y'];
 
+        //Verifies both checklists
         if (!empty($_POST['indoor']))
         {
             $userIndoor = $_POST['indoor'];
@@ -199,6 +208,7 @@ $f3->route('GET|POST /interests', function($f3){
         }
     }
 
+    //Sets variables in fat-free
     $f3->set("iInterests", getInInterests());
     $f3->set("userIndoor", $userIndoor);
     $f3->set("oInterests", getOutInterests());
