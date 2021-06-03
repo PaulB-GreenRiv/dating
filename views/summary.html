@@ -26,14 +26,17 @@
         <!-- Summary -->
         <div class="container" id="summaryList">
             <ul id="summList">
-                <li><p>Name: {{ @SESSION.fName }} {{ @SESSION.lName }}</p></li>
-                <li><p>Gender: {{ @SESSION.gender }} </p></li>
-                <li><p>Age: {{ @SESSION.age }} </p></li>
-                <li><p>Phone: {{ @SESSION.pNum }} </p></li>
-                <li><p>Email: {{ @SESSION.email }} </p></li>
-                <li><p>Hill #: {{ @SESSION.hill }} </p></li>
-                <li><p>Seeking: {{ @SESSION.lgender }} </p></li>
-                <li><p>Interests: {{ @SESSION.indoor }}, {{ @SESSION.outdoor }} </p></li>
+                <li><p>Name: {{ @SESSION.newUser->getFname() }} {{ @SESSION.newUser->getLname() }}</p></li>
+                <li><p>Gender: {{ @SESSION.newUser->getGender() }} </p></li>
+                <li><p>Age: {{ @SESSION.newUser->getAge() }} </p></li>
+                <li><p>Phone: {{ @SESSION.newUser->getPhone() }} </p></li>
+                <li><p>Email: {{ @SESSION.newUser->getEmail() }} </p></li>
+                <li><p>Hill #: {{ @SESSION.newUser->getHill() }} </p></li>
+                <li><p>Seeking: {{ @SESSION.newUser->getSeeking() }} </p></li>
+                <check if="{{ @SESSION.newUser instanceof PremMember }} == true">
+                    <li><p>Interests: {{ implode(', ', @SESSION.newUser->getInDoorInterests()) }},
+                        {{ implode(', ', @SESSION.newUser->getOutDoorInterests()) }} </p></li>
+                </check>
             </ul>
 
         </div>
@@ -44,7 +47,7 @@
         <div class="container" id="visProfile">
             <img src="images/tahImg.png">
             <h3>Biography</h3>
-            <p>{{ @SESSION.bio }}</p>
+            <p>{{ @SESSION.newUser->getBio() }}</p>
         </div>
 
         <hr>

@@ -1,49 +1,53 @@
 <?php
 
-function validName($name)
+class Validation
 {
-    return ctype_alpha($name);
-}
-
-function validAge($age)
-{
-    return ($age >= 18 and $age <= 118);
-}
-
-function validPhone($phone)
-{
-    return (strlen($phone) == 12);
-}
-
-function validEmail($email)
-{
-    return (strpos($email, ".") and strpos($email, "@"));
-}
-
-function validOutdoor($outdoor)
-{
-    $validOutdoor = getOutInterests();
-
-    foreach ($outdoor as $userChoice)
+    static function validName($name)
     {
-        if (!in_array($userChoice, $validOutdoor))
-        {
-            return false;
-        }
+        return ctype_alpha($name);
     }
-    return true;
-}
 
-function validIndoor($indoor)
-{
-    $validIndoor = getInInterests();
-
-    foreach ($indoor as $userChoice)
+    static function validAge($age)
     {
-        if (!in_array($userChoice, $validIndoor))
-        {
-            return false;
-        }
+        return ($age >= 18 and $age <= 118);
     }
-    return true;
+
+    static function validPhone($phone)
+    {
+        return (strlen($phone) == 12);
+    }
+
+    static function validEmail($email)
+    {
+        return (strpos($email, ".") and strpos($email, "@"));
+    }
+
+    static function validOutdoor($outdoor)
+    {
+        $validOutdoor = getOutInterests();
+
+        foreach ($outdoor as $userChoice)
+        {
+            if (!in_array($userChoice, $validOutdoor))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static function validIndoor($indoor)
+    {
+        $validIndoor = getInInterests();
+
+        foreach ($indoor as $userChoice)
+        {
+            if (!in_array($userChoice, $validIndoor))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
+
