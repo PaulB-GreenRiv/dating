@@ -12,6 +12,18 @@ class Member
     private $_seeking;
     private $_bio;
 
+    /**
+     * Member constructor.
+     * @param string $fname User First Name
+     * @param string $lname User Last Name
+     * @param int $age User age
+     * @param string $gender User gender
+     * @param string $phone User phone number
+     * @param string $email User email
+     * @param int $hill User hill
+     * @param string $seeking Gender to be searched
+     * @param string $bio Bio of user
+     */
     function __construct($fname = "", $lname = "", $age = 0, $gender = "", $phone = "",
     $email = "", $hill = 0, $seeking = "", $bio = "")
     {
@@ -27,7 +39,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets first name
+     * @return mixed|string First name
      */
     public function getFname()
     {
@@ -35,7 +48,8 @@ class Member
     }
 
     /**
-     * @param mixed|string $fname
+     * Sets First name
+     * @param mixed|string $fname First name
      */
     public function setFname($fname)
     {
@@ -43,7 +57,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets Last Name
+     * @return mixed|string Last Name
      */
     public function getLname()
     {
@@ -51,7 +66,8 @@ class Member
     }
 
     /**
-     * @param mixed|string $lname
+     * Sets Last Name
+     * @param mixed|string $lname Last Name
      */
     public function setLname($lname)
     {
@@ -59,7 +75,8 @@ class Member
     }
 
     /**
-     * @return int|mixed
+     * Gets age
+     * @return int|mixed age
      */
     public function getAge()
     {
@@ -67,7 +84,8 @@ class Member
     }
 
     /**
-     * @param int|mixed $age
+     * Sets age
+     * @param int|mixed $age age
      */
     public function setAge($age)
     {
@@ -75,7 +93,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets gender
+     * @return mixed|string gender
      */
     public function getGender()
     {
@@ -83,7 +102,8 @@ class Member
     }
 
     /**
-     * @param mixed|string $gender
+     * Sets gender
+     * @param mixed|string $gender gender
      */
     public function setGender($gender)
     {
@@ -91,7 +111,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets Phone Number
+     * @return mixed|string Phone Number
      */
     public function getPhone()
     {
@@ -99,7 +120,8 @@ class Member
     }
 
     /**
-     * @param mixed|string $phone
+     * Sets Phone Number
+     * @param mixed|string $phone Phone Number
      */
     public function setPhone($phone)
     {
@@ -107,7 +129,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets Email
+     * @return mixed|string Email
      */
     public function getEmail()
     {
@@ -115,7 +138,8 @@ class Member
     }
 
     /**
-     * @param mixed|string $email
+     * Sets Email
+     * @param mixed|string $email Email
      */
     public function setEmail($email)
     {
@@ -123,7 +147,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets Hill
+     * @return mixed|string Hill
      */
     public function getHill()
     {
@@ -131,7 +156,8 @@ class Member
     }
 
     /**
-     * @param mixed|int $hill
+     * Sets Hill
+     * @param mixed|int $hill Hill
      */
     public function setHill($hill)
     {
@@ -139,7 +165,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets Seeking Gender
+     * @return mixed|string Seeking Gender
      */
     public function getSeeking()
     {
@@ -147,6 +174,7 @@ class Member
     }
 
     /**
+     * Sets Seeking Gender
      * @param mixed|string $seeking
      */
     public function setSeeking($seeking)
@@ -155,7 +183,8 @@ class Member
     }
 
     /**
-     * @return mixed|string
+     * Gets Bio
+     * @return mixed|string Bio
      */
     public function getBio()
     {
@@ -163,7 +192,8 @@ class Member
     }
 
     /**
-     * @param mixed|string $bio
+     * Sets Bio
+     * @param mixed|string $bio Bio
      */
     public function setBio($bio)
     {
