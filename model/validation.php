@@ -24,7 +24,7 @@ class Validation
 
     static function validOutdoor($outdoor)
     {
-        $validOutdoor = getOutInterests();
+        $validOutdoor = $GLOBALS['dataLayer']->getOutInterests();
 
         foreach ($outdoor as $userChoice)
         {
@@ -38,7 +38,7 @@ class Validation
 
     static function validIndoor($indoor)
     {
-        $validIndoor = getInInterests();
+        $validIndoor = $GLOBALS['dataLayer']->getInInterests();
 
         foreach ($indoor as $userChoice)
         {

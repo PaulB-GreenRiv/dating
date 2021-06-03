@@ -43,7 +43,7 @@ class Controller
             $isPremium = $_POST['isPrem'];
 
             // Validate First Name
-            if (!Validation::validFood($userfName)) {
+            if (!Validation::validName($userfName)) {
                 $this->_f3->set('errors["fName"]', 'Please enter a valid name 
             (no numbers / special characters)');
             }
@@ -86,7 +86,7 @@ class Controller
         $this->_f3->set('userfName', $userfName);
         $this->_f3->set('userlName', $userlName);
         $this->_f3->set('userAge', $userAge);
-        $this->_f3->set('genders', getGenderDetails());
+        $this->_f3->set('genders', $GLOBALS['dataLayer']->getGenderDetails());
         $this->_f3->set('userGend', $userGend);
         $this->_f3->set('userpNum', $userPnum);
 
@@ -143,7 +143,7 @@ class Controller
         //Sets variables in fat-free
         $this->_f3->set('userHill', $userHill);
         $this->_f3->set('userEmail', $userEmail);
-        $this->_f3->set('genders', getGenderDetails());
+        $this->_f3->set('genders', $GLOBALS['dataLayer']->getGenderDetails());
         $this->_f3->set('userlGender', $userlGender);
         $this->_f3->set('userBio', $userBio);
 
@@ -194,9 +194,9 @@ class Controller
         }
 
         //Sets variables in fat-free
-        $this->_f3->set("iInterests", getInInterests());
+        $this->_f3->set("iInterests", $GLOBALS['dataLayer']->getInInterests());
         $this->_f3->set("userIndoor", $userIndoor);
-        $this->_f3->set("oInterests", getOutInterests());
+        $this->_f3->set("oInterests", $GLOBALS['dataLayer']->getOutInterests());
         $this->_f3->set("userOutdoor", $userOutdoor);
 
         //Display page

@@ -21,6 +21,7 @@ session_start();
 //Instantiate Fat-Free
 $f3 = Base::instance();
 $con = new Controller($f3);
+$dataLayer = new DataLayer();
 
 //Define default route
 $f3->route('GET /', function(){
